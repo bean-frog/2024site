@@ -1,14 +1,15 @@
 import './index.css';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react'; // Import useState and useEffect hooks
+import { useState, useEffect } from 'react';
 import About from './About';
 import Projects from './Projects';
 import Skills from './Skills';
 import Tech from './Tech';
 import Home from './Home';
+import Contact from './Contact';
 
 function Nav() {
-  const location = useLocation(); // Get the current location
+  const location = useLocation(); 
   const [currentPath, setCurrentPath] = useState('/');
 
   useEffect(() => {
@@ -16,8 +17,9 @@ function Nav() {
   }, [location]);
 
   return (
-      <div className="border-2 border-full border-glass-border bg-gradient-to-tr from-glass-dark/40 via-glass-reflective/50 to-glass-dark/40 rounded-md flex flex-col items-center justify-center text-black p-6 h-fit w-fit">
+      <div className="border-2 border-full border-glass-border bg-gradient-to-tr from-glass-dark/40 via-glass-reflective/50 to-glass-dark/40 rounded-md flex flex-col items-center justify-center text-black p-6 h-fit w-fit backdrop-blur-sm">
         <h1 className="text-2xl font-bold">beanfrog.xyz</h1>
+        <Contact />
         <nav className="flex flex-row items-center justify-center mt-4 space-x-2">
           <NavLink
             to="/"
@@ -80,7 +82,7 @@ function App() {
     <Router>
       <>
         <Nav />
-        <div className="border-2 border-full border-glass-border bg-gradient-to-tr from-glass-dark/40 via-glass-reflective/50 to-glass-dark/40 rounded-md flex flex-col mt-4 items-center justify-center text-black p-6 h-fit w-1/2">
+        <div className=" flex flex-col mt-4 items-center justify-center text-black p-2 h-fit w-1/2">
 
         <Routes>
           <Route path="/about" element={<About />} />
