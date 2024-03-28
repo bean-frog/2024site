@@ -12,13 +12,15 @@ import motds from './motds';
 function Nav() {
   const location = useLocation(); 
   const [currentPath, setCurrentPath] = useState('/');
-
+  
   useEffect(() => {
     setCurrentPath(location.pathname);
   }, [location]);
+
   useEffect(() => {
     updateMotd();
   }, []);
+
   const motdRef = useRef(null);
 
   const updateMotd = () => {
@@ -28,55 +30,35 @@ function Nav() {
   };
 
   return (
-      <div className="flex flex-col justify-center items-center p-6 px-10 pb-1 text-black bg-gradient-to-tr rounded-md border-2 backdrop-blur-sm border-full border-glass-border from-glass-dark/40 via-glass-reflective/50 to-glass-dark/40 h-fit w-fit">
-        <h1 className="text-2xl font-bold tracking-wider">beanfrog.xyz</h1>
-        <Contact />
-        <nav className="flex flex-row justify-center items-center mt-4 space-x-2">
-          <NavLink
-            to="/"
-            className="text-lg hover:scale-[1.03]"
-            currentPath={currentPath}
-          >
-            Home
-          </NavLink>
-          <h1> | </h1>
-          <NavLink
-            to="/about"
-            className="text-lg hover:scale-[1.03]"
-            currentPath={currentPath}
-          >
-            About
-          </NavLink>
-          <h1> | </h1>
-          <NavLink
-            to="/projects"
-            className="text-lg hover:scale-[1.03]"
-            currentPath={currentPath}
-          >
-            Projects
-          </NavLink>
-          <h1> | </h1>
-          <NavLink
-            to="/skills"
-            className="text-lg hover:scale-[1.03]"
-            currentPath={currentPath}
-          >
-            Skills
-          </NavLink>
-          <h1> | </h1>
-          <NavLink
-            to="/tech"
-            className="text-lg hover:scale-[1.03]"
-            currentPath={currentPath}
-          >
-            Tech
-          </NavLink>
-        </nav>
-        <h1 onClick={updateMotd} className="text-sm">"<span ref={motdRef}></span>"</h1>
-      </div>
+    <div className="fixed top-12 left-0 right-0 z-50 flex flex-col justify-center items-center p-6 px-10 pb-1 text-black bg-gradient-to-tr rounded-md border-2 backdrop-blur-sm border-full border-glass-border from-glass-dark/40 via-glass-reflective/50 to-glass-dark/40 h-fit w-fit mx-auto">
+      <h1 className="text-2xl font-bold tracking-wider">beanfrog.xyz</h1>
+      <Contact />
+      <nav className="flex flex-row justify-center items-center mt-4 space-x-2">
+        <NavLink to="/" className="text-lg transition-all hover:transform hover:-translate-y-1" currentPath={currentPath}>
+          Home
+        </NavLink>
+        <h1> | </h1>
+        <NavLink to="/about" className="text-lg transition-all hover:transform hover:-translate-y-1" currentPath={currentPath}>
+          About
+        </NavLink>
+        <h1> | </h1>
+        <NavLink to="/projects" className="text-lg transition-all hover:transform hover:-translate-y-1" currentPath={currentPath}>
+          Projects
+        </NavLink>
+        <h1> | </h1>
+        <NavLink to="/skills" className="text-lg transition-all hover:transform hover:-translate-y-1" currentPath={currentPath}>
+          Skills
+        </NavLink>
+        <h1> | </h1>
+        <NavLink to="/tech" className="text-lg transition-all hover:transform hover:-translate-y-1" currentPath={currentPath}>
+          Tech
+        </NavLink>
+      </nav>
+      <h1 onClick={updateMotd} className="text-sm">"<span ref={motdRef}></span>"</h1>
+    </div>
   );
-  
 }
+
 
 function NavLink({ to, className, children, currentPath }) {
   const isActive = currentPath === to;

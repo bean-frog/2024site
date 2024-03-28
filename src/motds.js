@@ -21,7 +21,6 @@ const motds = [
     "'You'd better f*cking learn swedish' - Joakim Broden",
     "javascriptmaxxing",
     "TOMA TOMA TOMA TOMA",
-    "it was hard to know who was more crazy, me or everyone else",
     "Life.... is Roblox",
     "hilarious entities",
     "*extremely loud incorrect buzzer*",
@@ -32,8 +31,8 @@ const motds = [
     "sponsored by sponsors",
     "Torvalds is the goat",
     "i use arch btw",
-    "send it"
+    "send it",
+    "like zoinks scoob"
   ];
-  
-export default motds;
+  export default motds;
   
