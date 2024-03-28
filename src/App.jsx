@@ -1,12 +1,13 @@
 import './index.css';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import About from './About';
 import Projects from './Projects';
 import Skills from './Skills';
 import Tech from './Tech';
 import Home from './Home';
 import Contact from './Contact';
+import motds from './motds';
 
 function Nav() {
   const location = useLocation(); 
@@ -15,12 +16,22 @@ function Nav() {
   useEffect(() => {
     setCurrentPath(location.pathname);
   }, [location]);
+  useEffect(() => {
+    updateMotd();
+  }, []);
+  const motdRef = useRef(null);
+
+  const updateMotd = () => {
+    const randomIndex = Math.floor(Math.random() * motds.length);
+    const randomMotd = motds[randomIndex];
+    motdRef.current.innerText = randomMotd;
+  };
 
   return (
-      <div className="border-2 border-full border-glass-border bg-gradient-to-tr from-glass-dark/40 via-glass-reflective/50 to-glass-dark/40 rounded-md flex flex-col items-center justify-center text-black p-6 h-fit w-fit backdrop-blur-sm">
-        <h1 className="text-2xl font-bold">beanfrog.xyz</h1>
+      <div className="flex flex-col justify-center items-center p-6 px-10 pb-1 text-black bg-gradient-to-tr rounded-md border-2 backdrop-blur-sm border-full border-glass-border from-glass-dark/40 via-glass-reflective/50 to-glass-dark/40 h-fit w-fit">
+        <h1 className="text-2xl font-bold tracking-wider">beanfrog.xyz</h1>
         <Contact />
-        <nav className="flex flex-row items-center justify-center mt-4 space-x-2">
+        <nav className="flex flex-row justify-center items-center mt-4 space-x-2">
           <NavLink
             to="/"
             className="text-lg hover:scale-[1.03]"
@@ -61,6 +72,7 @@ function Nav() {
             Tech
           </NavLink>
         </nav>
+        <h1 onClick={updateMotd} className="text-sm">"<span ref={motdRef}></span>"</h1>
       </div>
   );
   
@@ -77,12 +89,12 @@ function NavLink({ to, className, children, currentPath }) {
 
 function App() {
   return (
-    <div className="h-screen w-screen bg-transparent flex flex-col items-center justify-center">
+    <div className="flex flex-col justify-center items-center w-screen h-screen bg-transparent">
 
     <Router>
       <>
         <Nav />
-        <div className=" flex flex-col mt-4 items-center justify-center text-black p-2 h-fit w-1/2">
+        <div className="flex flex-col justify-center items-center p-2 mt-4 w-1/2 text-black h-fit">
 
         <Routes>
           <Route path="/about" element={<About />} />
