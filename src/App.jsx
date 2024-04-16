@@ -72,7 +72,6 @@ function NavLink({ to, className, children, currentPath }) {
 function App() {
   return (
     <div className="flex flex-col justify-center items-center w-screen h-screen bg-transparent">
-
     <Router>
       <>
         <Nav />
