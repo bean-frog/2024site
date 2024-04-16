@@ -33,7 +33,7 @@ function Contact() {
         data-tooltip-content="BlueSky"
         data-tooltip-place="top" 
         href="https://bsky.app/profile/beanfrog.bsky.social">
-        <i className="fas fa-cloud text-xl"></i>
+        <i className="fab fa-cloud text-xl"></i>
         </a>
         <a
 

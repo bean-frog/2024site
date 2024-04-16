@@ -24,7 +24,8 @@ function Projects() {
 <>
 
 <div className="flex flex-col justify-center items-center p-6 bg-gradient-to-tr rounded-md border-2 backdrop-blur-sm border-full border-glass-border from-glass-dark/30 via-glass-reflective/40 to-glass-dark/30">
-            <h1 className="text-xl font-bold">Projects</h1>
+<h1 className="text-xl font-bold">Coming soon :)</h1>
+           {/* <h1 className="text-xl font-bold">Projects</h1>
             <div className="grid grid-cols-3 gap-2">
                 <ProjectCard icons="html,tailwind,js" title="Tuneguessr" ghlink="https://github.com/bean-frog/tuneguessr" otherlink="https://beanfrog.xyz/tuneguessr" olclass="fas fa-globe" description="A game where you guess what country different songs are from."/>
                 <ProjectCard icons="react,tailwind" title="Github Lookup" ghlink="https://github.com/bean-frog/github-lookup" otherlink="https://beanfrog.xyz/github-lookup" olclass="fas fa-globe" description="Simple React project to look up info about a Github user."/>
@@ -33,8 +34,9 @@ function Projects() {
                 <ProjectCard icons="electron,html,tailwind,js" title="GooberFX" ghlink="https://github.com/bean-frog/GooberFX" description="Sound cue application built in Electron, for a school thing."/>
                 <ProjectCard icons="js" title="Ligma.js" ghlink="https://github.com/bean-frog/ligma.js" description="Stupid and/or useless JS library"/>
             </div>
+            */}
         </div>
-        <ProjectPage />
+        {/*<ProjectPage />*/}
 
 </>
 
