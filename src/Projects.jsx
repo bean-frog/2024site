@@ -1,10 +1,10 @@
 import './index.css'
-
+import ProjectPage from './ProjectPage';
 
 function ProjectCard({title, ghlink, otherlink, olclass, description, icons}) {
     return (
         <div className="flex w-full flex-col items-center p-2 rounded-md border-[1px] border-full border-glass-border bg-glass-medium/50">
-        <span className="flex flex-row space-x-2 items-center">
+        <span className="flex flex-row items-center space-x-2">
             <h1 className='font-bold'>{ title }</h1>
             <img class="h-5 w-fit" src={"https://skillicons.dev/icons?i=" + icons} ></img> 
         </span>
@@ -20,7 +20,10 @@ function ProjectCard({title, ghlink, otherlink, olclass, description, icons}) {
 
 function Projects() {
    return (
-        <div className="flex flex-col justify-center items-center p-6 bg-gradient-to-tr rounded-md border-2 backdrop-blur-sm border-full border-glass-border from-glass-dark/30 via-glass-reflective/40 to-glass-dark/30">
+    
+<>
+
+<div className="flex flex-col justify-center items-center p-6 bg-gradient-to-tr rounded-md border-2 backdrop-blur-sm border-full border-glass-border from-glass-dark/30 via-glass-reflective/40 to-glass-dark/30">
             <h1 className="text-xl font-bold">Projects</h1>
             <div className="grid grid-cols-3 gap-2">
                 <ProjectCard icons="html,tailwind,js" title="Tuneguessr" ghlink="https://github.com/bean-frog/tuneguessr" otherlink="https://beanfrog.xyz/tuneguessr" olclass="fas fa-globe" description="A game where you guess what country different songs are from."/>
@@ -31,6 +34,13 @@ function Projects() {
                 <ProjectCard icons="js" title="Ligma.js" ghlink="https://github.com/bean-frog/ligma.js" description="Stupid and/or useless JS library"/>
             </div>
         </div>
+        <ProjectPage />
+
+</>
+
+
+
+    
     )
 }
 

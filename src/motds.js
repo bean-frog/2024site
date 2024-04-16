@@ -32,7 +32,10 @@ const motds = [
     "Torvalds is the goat",
     "i use arch btw",
     "send it",
-    "like zoinks scoob"
+    "like zoinks scoob",
+    "nate what are you doing man",
+    "5 bands on the fit but your pillow lookin like a tea bag",
+    "mods, mog this guy"
   ];
   export default motds;
   
