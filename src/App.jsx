@@ -228,7 +228,6 @@ function App() {
   }
 
   return (
-<<<<<<< HEAD
     <>
    
       <div className="flex flex-col justify-center items-center w-screen h-screen text-white">
@@ -262,18 +261,7 @@ function App() {
               </div>
             </div>
           </div>
-        </Router>
-
-        
-=======
-    <div className="flex flex-col justify-center items-center w-screen h-screen bg-transparent">
-    <Router>
-      <>
-        <Nav />
-        <div className="flex flex-col justify-center items-center p-2 mt-24 w-1/2 text-black h-fit">
->>>>>>> 2bc62edd1caa21c356046ab9a1cc50ec9de30837
-
-        
+        </Router> 
         )}
       </div>
     </>
