@@ -218,20 +218,21 @@ function App() {
   
   function Background() {
     return (
-      <div className="container absolute w-screen h-screen bg-richblack">
-      	<div className="grid">
+      <div className="absolute w-screen h-screen bg-richblack">
+
+        <div className="grid">
 		      <div className="grid-fade"></div>
 		      <div className="grid-lines"></div>
 	      </div>
+
       </div>
     )
   }
 
   return (
     <>
-   
-      <div className="flex flex-col justify-center items-center w-screen h-screen text-white">
       <Background />
+      <div className="flex flex-col justify-center items-center w-screen h-screen text-white">
         {loading ? (
           <h1 className="inline-block relative text-3xl encode-sans">
             {getLoadingText()}
